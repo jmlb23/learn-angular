@@ -1,0 +1,13 @@
+<h1>
+  {{title}}
+</h1>
+<ol>
+  <li *ngFor="let ele of list; let i = index">
+    <input #check type="checkbox" (click)="callChange(check.value,a)"/>
+    <a #a >{{list[i]}}</a>
+    <input type="button" value="delete" (click)='this.removeElement($i)'/>
+  </li>
+</ol>
+<hr />
+<input #txtElemento type="text" placeholder="put here your TODO"/>
+<input type="button" (click)="addElement(txtElemento.value)" value="add"/>
